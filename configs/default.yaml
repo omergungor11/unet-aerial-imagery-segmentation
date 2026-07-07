@@ -1,0 +1,35 @@
+data:
+  root_dir: "Semantic segmentation dataset"
+  cache_dir: "outputs/patches"
+  patch_size: 256
+  drop_mostly_unlabeled: true
+  max_unlabeled_ratio: 0.95   # bir patch'in en fazla bu oranda "Unlabeled" olmasına izin ver
+  splits:
+    train: [1, 2, 3, 4, 5, 6]
+    val: [8]
+    test: [7]
+
+model:
+  in_channels: 3
+  num_classes: 6
+  base_channels: 32
+  depth: 4
+  dropout: 0.1
+
+train:
+  epochs: 50
+  batch_size: 8
+  lr: 0.001
+  weight_decay: 0.0001
+  use_class_weights: true
+  num_workers: 2
+  device: "cpu"
+  seed: 42
+  patience: 10          # early stopping (val mIoU iyileşmezse kaç epoch sonra dur)
+  checkpoint_dir: "outputs/checkpoints"
+  log_dir: "outputs"
+
+augment:
+  hflip: 0.5
+  vflip: 0.5
+  rotate90: 0.5
