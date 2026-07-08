@@ -34,13 +34,6 @@ unet-aerial-imagery-segmentation/
     └── ... (Tile 8'e kadar)
 ```
 
-Alternatif olarak Kaggle CLI ile:
-
-```bash
-kaggle datasets download -d humansintheloop/semantic-segmentation-of-aerial-imagery
-unzip semantic-segmentation-of-aerial-imagery.zip -d "Semantic segmentation dataset"
-```
-
 ## Veri seti hakkında önemli detaylar
 
 - Görüntü boyutları tile'lara göre çok değişken (509x544 ile 2149x1479 arası).
